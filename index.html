@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagar Chouhan - Professional Android Developer</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* --- Custom Theme & Base Styles --- */
+        :root {
+            --bs-body-bg: rgb(24, 33, 51);
+            --bs-body-color: rgb(203, 213, 225);
+            --bs-primary: rgb(34, 211, 238);
+            --bs-primary-rgb: 34, 211, 238;
+            --bs-dark-rgb: 15, 23, 42;
+            --bs-link-color-rgb: var(--bs-primary-rgb);
+            --bs-link-hover-color: rgb(165, 243, 252);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1, h2, h3, h4, h5, h6, .fw-bold {
+            color: rgb(241, 245, 249);
+        }
+        
+        section {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+        }
+
+        .bg-section-dark {
+             background-color: rgb(30, 41, 59);
+        }
+
+        /* Override Bootstrap Button Colors for High Contrast */
+        .btn-primary {
+            --bs-btn-color: rgb(15, 23, 42);
+            --bs-btn-bg: var(--bs-primary);
+            --bs-btn-border-color: var(--bs-primary);
+            --bs-btn-hover-color: rgb(15, 23, 42);
+            --bs-btn-hover-bg: rgb(165, 243, 252);
+            --bs-btn-hover-border-color: rgb(165, 243, 252);
+            --bs-btn-active-bg: rgb(165, 243, 252);
+            --bs-btn-active-border-color: rgb(165, 243, 252);
+        }
+
+        /* --- Animation Styles --- */
+        .animated-item {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-up { transform: translateY(30px); }
+        .fade-in-left { transform: translateX(-30px); }
+        .fade-in-right { transform: translateX(30px); }
+
+        .visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* --- Custom Component Styles --- */
+        .project-card, .cert-card {
+            transition: all 0.3s ease-in-out;
+            border: 1px solid rgb(51, 65, 85);
+        }
+        .project-card:hover, .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.2), 0 8px 10px -6px rgba(0,0,0,0.2);
+            border-color: var(--bs-primary);
+        }
+        
+        /* --- Timeline for Experience --- */
+        .timeline-item {
+            position: relative;
+            padding-left: 2.5rem;
+            padding-bottom: 2.5rem;
+            border-left: 2px solid rgb(51, 65, 85);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -0.6rem;
+            top: 0.25rem;
+            height: 1.1rem;
+            width: 1.1rem;
+            background-color: var(--bs-primary);
+            border-radius: 50%;
+            border: 3px solid rgb(30, 41, 59);
+        }
+        .timeline-item:last-child {
+            border-left: 2px solid transparent;
+            padding-bottom: 0;
+        }
+        
+        /* Hero section styles */
+        #hero {
+             padding-top: 10rem;
+             padding-bottom: 10rem;
+             background: linear-gradient(135deg, rgb(15, 23, 42) 0%, rgb(30, 41, 59) 100%);
+        }
+        
+        /* Navbar styling */
+        .navbar {
+            background-color: rgba(30, 41, 59, 0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#main-nav">
+
+    <!-- Header & Navigation -->
+    <nav id="main-nav" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fs-4 fw-bold" href="#">Sagar Chouhan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section id="hero" class="text-center">
+            <div class="container">
+                <h1 class="display-2 fw-bolder leading-tight animated-item fade-in-up" style="animation-delay: 100ms;">Android Developer</h1>
+                <p class="lead mt-4 col-lg-8 mx-auto animated-item fade-in-up" style="animation-delay: 200ms;">I build intuitive and user-friendly mobile applications for the Android platform using Java, REST APIs, and modern development practices.</p>
+                <a href="#projects" class="btn btn-primary btn-lg mt-4 animated-item fade-in-up" style="animation-delay: 300ms;">
+                    View My Work
+                </a>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about">
+             <div class="container">
+                 <div class="row align-items-center g-5">
+                    <div class="col-lg-4 animated-item fade-in-left">
+                        <img src="./Image-removebg-preview.png" alt="A photo of Sagar Chouhan" class="img-fluid rounded-circle shadow-lg mx-auto border border-4" style="border-color: rgb(51, 65, 85) !important;">
+                    </div>
+                    <div class="col-lg-8 animated-item fade-in-right">
+                        <h2 class="display-4 fw-bold mb-4">About Me</h2>
+                        <p>
+                            Hello! I'm Sagar Chouhan, a passionate Android Developer currently pursuing a Master's of Computer Application from Chandigarh University. My journey into mobile development is driven by a fascination for building applications that solve real-world problems and connect people.
+                        </p>
+                        <p>
+                            With hands-on experience as an Android Developer Trainee, I have honed my skills in designing UIs with XML, writing robust logic in Java, and integrating backend services using REST APIs. I thrive in collaborative environments and enjoy the entire app development lifecycle, from concept to deployment.
+                        </p>
+                        <p class="mb-4">
+                            I am actively seeking new opportunities where I can contribute to challenging projects, learn from experienced developers, and continue to grow my skills in the dynamic field of mobile technology.
+                        </p>
+                        <a href="24MCA20087_SagarChouhan.pdf" download class="btn btn-primary">
+                            Download Resume
+                        </a>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="bg-section-dark">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5 animated-item fade-in-up">Career Timeline</h2>
+                <div class="col-lg-8 mx-auto">
+                    <div class="timeline-item animated-item fade-in-up">
+                        <div class="timeline-dot"></div>
+                        <div class="card text-bg-dark border-secondary">
+                             <div class="card-body p-4">
+                                <h3 class="card-title fs-4 fw-bold">Android Developer Trainee</h3>
+                                <p class="text-primary fw-medium mb-2">Silverwink E-Development | 2022 - 2023</p>
+                                <ul class="list-unstyled">
+                                    <li class="mb-2">✓ Designed and developed Android application UI and integrated backend services using REST APIs.</li>
+                                    <li class="mb-2">✓ Collaborated in a 2-member team, taking sole responsibility for the Android development.</li>
+                                    <li class="mb-2">✓ Implemented core features such as user login, data display from APIs, and form submissions.</li>
+                                    <li>✓ Built a complete Android app for doctor appointments, which included features for scheduling meetings, ordering medicines, and billing.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5 animated-item fade-in-up">My Projects</h2>
+                <div class="col-lg-8 mx-auto">
+                    <!-- Project 1: KapricornBiotech -->
+                    <div class="card text-bg-dark shadow-lg overflow-hidden project-card animated-item fade-in-up">
+                        <div class="card-body p-4">
+                            <h3 class="card-title fs-4 fw-bold mb-2">KapricornBiotech</h3>
+                            <p class="card-subtitle mb-2 fw-semibold text-white-50">Role: Android Developer</p>
+                            <p class="card-text">Built a complete Android app for doctor appointments, meeting scheduling, medicine/product display, and order placement. Integrated backend with PHP APIs and MySQL database.</p>
+                            <ul class="list-disc list-inside small my-3">
+                                <li>User login & authentication.</li>
+                                <li>Schedule & view meetings with doctors.</li>
+                                <li>View & order medicines directly in-app.</li>
+                            </ul>
+                            <p class="small fw-medium mb-3">Tech Used: Java, Android Studio, PHP, MySQL, REST API</p>
+                            <a href="https://kapricornbiotech.com/" target="_blank" class="fw-semibold">View Live Site →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="bg-section-dark">
+            <div class="container text-center">
+                <h2 class="display-4 fw-bold text-center mb-5 animated-item fade-in-up">Technical Skills</h2>
+                <div class="animated-item fade-in-up">
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(4, 120, 87); color: rgb(167, 243, 208);">Java</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(4, 120, 87); color: rgb(167, 243, 208);">Android SDK</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(4, 120, 87); color: rgb(167, 243, 208);">REST API</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">Git</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">MySQL</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">MongoDB</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">Postman</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">C++ Programming</span>
+                    <span class="badge rounded-pill fs-6 p-3 m-1" style="background-color: rgb(51, 65, 85); color: rgb(226, 232, 240);">XML Layouts</span>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Certificates Section -->
+        <section id="certificates">
+            <div class="container">
+                <h2 class="display-4 fw-bold text-center mb-5 animated-item fade-in-up">Certificates</h2>
+                <div class="row g-4">
+                     <div class="col-md-6 animated-item fade-in-up">
+                        <div class="card text-bg-dark h-100 cert-card">
+                            <div class="card-body p-4">
+                                <p class="fw-bold fs-5">Java EE</p>
+                                <p class="small text-white-50">Silverwinks E-development, Jan 2022</p>
+                            </div>
+                        </div>
+                     </div>
+                    <div class="col-md-6 animated-item fade-in-up" style="transition-delay: 100ms;">
+                        <div class="card text-bg-dark h-100 cert-card">
+                           <div class="card-body p-4">
+                                <p class="fw-bold fs-5">C, C++ Programming</p>
+                                <p class="small text-white-50">Silverwinks E-development, Jan 2021</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="text-center bg-section-dark">
+            <div class="container animated-item fade-in-up">
+                <h2 class="display-4 fw-bold">Get In Touch</h2>
+                <p class="lead mt-3">I'm currently open to new opportunities. Feel free to reach out!</p>
+                <div class="mt-4">
+                     <p><strong>Phone:</strong> <a href="tel:+917302484767">+91 7302484767</a></p>
+                     <p><strong>Email:</strong> <a href="mailto:SagarChauhan89230@gmail.com">SagarChauhan89230@gmail.com</a></p>
+                     <p><strong>Location:</strong> MuzaffarNagar (Uttar Pradesh)</p>
+                </div>
+                <div class="mt-4">
+                    <a href="https://github.com/Sagar-Chouhan" target="_blank" class="text-white-50 hover-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+                    </a>
+                </div>
+                 <div class="mt-5">
+                    <h3 class="fs-4 fw-bold">Hobbies & Interests</h3>
+                    <p class="mt-2 text-white-50">Rapping, Song Writing, Playing Chess</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white text-center py-4" style="background-color: rgb(15, 23, 42);">
+        <div class="container">
+            <p class="mb-0 small">&copy; 2025 Sagar Chouhan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" xintegrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // --- Scroll Animation Logic ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1, // Trigger when 10% of the element is visible
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.animated-item');
+            elementsToAnimate.forEach(el => observer.observe(el));
+            
+            // Immediately animate hero section on load
+            const heroItems = document.querySelectorAll('#hero .animated-item');
+            heroItems.forEach(item => {
+                 setTimeout(() => item.classList.add('visible'), 100);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
